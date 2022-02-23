@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+
+    <tr>
+        <td colspan="4"><input id="screen" type="text"></td>
+    </tr>
+    <tr>
+        <td><button onclick="input('**')">^</button></td>
+        <td><button onclick="input('%')">%</button></td>
+        <td><button onclick="reset()">AC</button></td>
+        <td><button onclick="input('/')">/</button></td>
+    </tr>
+<tr>
+    <td><button onclick="input('7')">7</button></td>
+    <td><button onclick="input('8')">8</button></td>
+    <td><button onclick="input('9')">9</button></td>
+    <td><button onclick="input('*')">*</button></td>
+</tr>
+    <tr>
+        <td><button onclick="input('4')">4</button></td>
+        <td><button onclick="input('5')">5</button></td>
+        <td><button onclick="input('6')">6</button></td>
+        <td><button onclick="input('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="input('1')">1</button></td>
+        <td><button onclick="input('2')">2</button></td>
+        <td><button onclick="input('3')">3</button></td>
+        <td rowspan="2"><button onclick="input('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="input('0')">0</button></td>
+        <td><button onclick="input('.')">.</button></td>
+        <td><button onclick="calculate()">=</button></td>
+
+    </tr>
+</table>
+
+
+<script>
+    function input(data) {
+        document.getElementById("screen").value += data;
+    }
+    function calculate() {
+        let result = eval(document.getElementById("screen").value);
+        document.getElementById("screen").value = result;
+    }
+
+    function reset() {
+        document.getElementById("screen").value = "";
+    }
+</script>
+</body>
+</html>
